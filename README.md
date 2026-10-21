@@ -1,5 +1,7 @@
 # tv-mcp
 
+[![e2e](https://github.com/ryanenash/tv-mcp/actions/workflows/e2e.yml/badge.svg)](https://github.com/ryanenash/tv-mcp/actions/workflows/e2e.yml)
+
 An [MCP](https://modelcontextprotocol.io) server that lets an AI agent drive and verify TV web apps on real
 devices the way a viewer does: remote-control keys in, what is on screen out. It runs scripted journeys and
 whole sanity checklists across several devices in lockstep, and reports pass/fail and per-step timings per
@@ -8,6 +10,12 @@ device.
 It targets big-screen web apps (Android TV and Fire TV web wrappers, Tizen, webOS, HbbTV and operator
 set-top boxes, console web shells, plain browsers) whose UI is driven by a remote and a focus engine rather
 than a mouse.
+
+![tv-mcp running three journeys on the demo TV app: dismissing the first-launch welcome, browsing the home rails
+into a programme page and back, and typing a search on the on-screen keyboard](docs/demo.gif)
+
+_The MCP server driving the demo app through the agent transport, in real time. Each `run_journey` call presses
+remote keys (top right) and checks focus, URL, storage and dialogs after every step._
 
 ## How it fits together
 

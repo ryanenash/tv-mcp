@@ -1,0 +1,30 @@
+{
+  "name": "search-typing",
+  "description": "Open Search from the menu and type a query on the on-screen keyboard.",
+  "steps": [
+    {
+      "key": "Left",
+      "expectFocusChange": true
+    },
+    {
+      "key": "Up",
+      "untilFocus": "Home"
+    },
+    {
+      "key": "Down",
+      "untilFocus": "Search"
+    },
+    {
+      "key": "Ok",
+      "waitUrl": "#/search",
+      "expectFocus": "a"
+    },
+    {
+      "typeText": "${QUERY}"
+    },
+    {
+      "waitText": "${QUERY}"
+    }
+  ],
+  "notes": ["Pass vars.QUERY (lowercase letters and spaces) or set TVMCP_QUERY."]
+}

@@ -1,0 +1,30 @@
+{
+  "name": "@tv-mcp/agent",
+  "version": "0.1.0",
+  "private": true,
+  "description": "In-app agent that connects a TV web app to the tv-mcp relay",
+  "type": "module",
+  "main": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/esm/index.d.ts",
+      "default": "./dist/esm/index.js"
+    },
+    "./script": "./dist/tv-mcp-agent.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json && esbuild dist/esm/auto.js --bundle --format=iife --target=es5 --minify --outfile=dist/tv-mcp-agent.js",
+    "type-check": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@tv-mcp/protocol": "workspace:*"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.10",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "@tv-mcp/relay",
+  "version": "0.1.0",
+  "private": true,
+  "description": "WebSocket relay between TV devices running the tv-mcp agent and MCP servers",
+  "type": "module",
+  "bin": {
+    "tv-mcp-relay": "./dist/server.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "type-check": "tsc -p tsconfig.json --noEmit",
+    "start": "node dist/server.js",
+    "dev": "tsx src/server.ts"
+  },
+  "dependencies": {
+    "@tv-mcp/agent": "workspace:*",
+    "@tv-mcp/protocol": "workspace:*",
+    "ws": "^8.21.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.19.10",
+    "@types/ws": "^8.18.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}

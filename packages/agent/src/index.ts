@@ -1,0 +1,5 @@
+export { AGENT_VERSION, resolveAgentName, startAgent } from './agent.js'
+export type { AgentHandle, AgentHooks, AgentOptions } from './agent.js'
+export { DomReader } from './dom.js'
+export { DEFAULT_PROFILE, resolveProfile } from '@tv-mcp/protocol'
+export type { AppProfile, DeepPartial } from '@tv-mcp/protocol'

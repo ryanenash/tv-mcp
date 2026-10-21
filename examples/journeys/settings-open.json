@@ -1,0 +1,23 @@
+{
+  "name": "settings-open",
+  "description": "Open Settings from the menu and land on its first option.",
+  "steps": [
+    {
+      "key": "Left",
+      "expectFocusChange": true
+    },
+    {
+      "key": "Up",
+      "untilFocus": "Home"
+    },
+    {
+      "key": "Down",
+      "untilFocus": "Settings"
+    },
+    {
+      "key": "Ok",
+      "waitUrl": "#/settings",
+      "expectFocus": "Sign in"
+    }
+  ]
+}

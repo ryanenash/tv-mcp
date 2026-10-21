@@ -1,0 +1,28 @@
+{
+  "name": "tv-mcp-workspace",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.14.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "type-check": "pnpm --filter @tv-mcp/protocol build && pnpm -r type-check",
+    "relay": "pnpm --filter @tv-mcp/relay start",
+    "server": "pnpm --filter @tv-mcp/server start",
+    "demo": "node examples/demo-app/serve.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "e2e": "node packages/server/scripts/e2e.mjs && node packages/server/scripts/e2e-file.mjs"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  }
+}

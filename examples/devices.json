@@ -1,0 +1,11 @@
+{
+  "demo": {
+    "match": "demo",
+    "notes": "The demo app in any browser, connected through the agent (it registers as demo-xxxx, or ?tvmcp=demo)."
+  },
+  "demo-devtools": {
+    "match": "localhost:3100",
+    "devtools": "http://127.0.0.1:9222",
+    "notes": "The demo app in a Chrome started with --remote-debugging-port=9222: the DevTools transport, no agent needed."
+  }
+}

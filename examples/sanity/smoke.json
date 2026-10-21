@@ -1,0 +1,13 @@
+{
+  "name": "smoke",
+  "description": "Smoke checklist for the demo app. Each item maps to journeys; it passes on a device when every journey passes.",
+  "vars": ["QUERY"],
+  "items": [
+    { "id": 1, "item": "First launch: welcome dialog", "journeys": ["first-launch-welcome"], "abortOnFail": true },
+    { "id": 2, "item": "Browse home rails and open a programme", "journeys": ["home-browse-details"] },
+    { "id": 3, "item": "Search with the on-screen keyboard", "journeys": ["search-typing"] },
+    { "id": 4, "item": "Open Settings", "journeys": ["settings-open"] },
+    { "id": 5, "item": "Playback", "comment": "No player in the demo app yet" },
+    { "id": 6, "item": "Voice search", "na": ["all"], "comment": "Not applicable to a browser" }
+  ]
+}

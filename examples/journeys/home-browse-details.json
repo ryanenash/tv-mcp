@@ -1,0 +1,14 @@
+{
+  "name": "home-browse-details",
+  "description": "Move along and between home rails, open a programme page, and come back to the home rail.",
+  "steps": [
+    { "key": "Right", "untilFocus": "Harbour Town" },
+    { "key": "Down", "untilFocus": "Second Act" },
+    { "key": "Ok", "waitUrl": "#/details/", "expectFocus": "Play" },
+    {
+      "key": "Back",
+      "waitSelector": "[data-focus-section=featuredRail] [data-focus-id]",
+      "expectFocus": "Northern Lights"
+    }
+  ]
+}

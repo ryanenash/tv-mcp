@@ -1,0 +1,26 @@
+{
+  "name": "first-launch-welcome",
+  "description": "From wiped storage, the welcome dialog appears focused, Continue dismisses it onto the home rail, and the dismissal persists.",
+  "start": {
+    "reset": false
+  },
+  "steps": [
+    {
+      "clearStorage": true,
+      "waitSelector": "[data-focus-id=welcome-continue]",
+      "expectFocus": "Continue"
+    },
+    {
+      "key": "Ok",
+      "expectDialog": "welcome",
+      "expectFocus": "Northern Lights",
+      "expectStorageKeys": ["demoWelcomeSeen"]
+    },
+    {
+      "navigate": "/",
+      "waitSelector": "[data-focus-section=featuredRail] [data-focus-id]",
+      "expectFocus": "Northern Lights"
+    }
+  ],
+  "notes": ["Runs first in a checklist: every other journey assumes the welcome dialog was dismissed."]
+}

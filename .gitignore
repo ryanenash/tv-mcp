@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.DS_Store
+reports/
+# Engagement packs carry device addresses and credentials; keep them out of this repo.
+packs/
+.env
+.mcp.json

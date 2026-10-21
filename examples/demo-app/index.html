@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Demo TV</title>
+    <link rel="stylesheet" href="app.css" />
+    <!-- The one line an app adds to become drivable. In <head>, so requests made while booting are captured. -->
+    <script src="http://localhost:8080/agent.js" data-autostart data-platform="demo"></script>
+  </head>
+  <body>
+    <nav id="menu" data-focus-section="menu" aria-label="Main menu">
+      <button data-focus-id="menu-home" data-route="#/home">Home</button>
+      <button data-focus-id="menu-search" data-route="#/search">Search</button>
+      <button data-focus-id="menu-settings" data-route="#/settings">Settings</button>
+    </nav>
+    <main id="page" aria-live="polite"></main>
+    <div id="dialog-root"></div>
+    <img class="logo" src="logo.svg" alt="" />
+    <img class="logo" src="missing-artwork.png" alt="" />
+    <script src="app.js"></script>
+  </body>
+</html>

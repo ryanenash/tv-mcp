@@ -1,0 +1,51 @@
+{
+  "lounge-androidtv": {
+    "match": "lounge-androidtv",
+    "adb": "10.0.0.21:5555",
+    "launch": {
+      "url": "https://app.example.test/?tvmcp=lounge-androidtv",
+      "package": "com.example.tvwrapper",
+      "activity": "com.example.tvwrapper.MainActivity"
+    },
+    "permissions": ["android.permission.RECORD_AUDIO"],
+    "notes": "Android TV web wrapper running a build with the agent. Pair once with `adb pair`, then run adb_setup."
+  },
+  "lab-firetv-devtools": {
+    "match": "firetv",
+    "adb": "G000XXXXXXXXXXXX",
+    "devtools": true,
+    "launch": {
+      "url": "https://app.example.test/",
+      "package": "com.example.firewrapper",
+      "urlExtra": "url"
+    },
+    "notes": "USB Fire TV whose wrapper enables WebView debugging: driven over adb-forwarded DevTools, any build."
+  },
+  "samsung-tizen": {
+    "match": "Tizen",
+    "sdb": "10.0.0.31:26101",
+    "devtools": true,
+    "launch": { "url": "file:///index.html", "package": "AbCdEf1234.ExampleApp" },
+    "timeoutScale": 2,
+    "notes": "Packaged Tizen app. launch_app restarts it with `sdb shell 0 debug` and forwards the Web Inspector."
+  },
+  "lg-webos": {
+    "match": "Web0S",
+    "devtools": "http://10.0.0.41:9998",
+    "notes": "webOS app installed in debug mode (ares-inspect exposes the inspector on the TV)."
+  },
+  "operator-stb": {
+    "match": "operator-stb",
+    "launch": {
+      "url": "https://app.example.test/?tvmcp=operator-stb",
+      "command": "./scripts/launch-on-stb.sh 10.0.0.51 \"https://app.example.test/?tvmcp=operator-stb\""
+    },
+    "timeoutScale": 2,
+    "maxHoldMs": 1200,
+    "notes": "Set-top box with a vendor launch CLI and no adb; slow, so doubled timeouts and pulsed scrub holds."
+  },
+  "games-console": {
+    "match": "games-console",
+    "notes": "Console browser or web app shell reached through its own launcher; agent only, launched by hand."
+  }
+}

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>Demo TV player</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <main data-focus-section="player">
+      <h1 id="player-title">Player</h1>
+      <p id="player-programme"></p>
+      <button data-focus-id="player-home">Back to home</button>
+    </main>
+    <script>
+      ;(function () {
+        var match = /[?&]title=([^&]*)/.exec(location.search)
+        document.getElementById('player-programme').textContent = match ? decodeURIComponent(match[1]) : ''
+        var home = document.querySelector('[data-focus-id=player-home]')
+        home.focus()
+        document.addEventListener('keydown', function (e) {
+          if (e.keyCode !== 13 && e.keyCode !== 8) return
+          e.preventDefault()
+          location.href = 'index.html'
+        })
+      })()
+    </script>
+    <script src="http://localhost:8080/agent.js" data-autostart data-platform="demo"></script>
+  </body>
+</html>

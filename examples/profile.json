@@ -1,0 +1,33 @@
+{
+  "name": "demo-tv",
+  "focus": {
+    "idAttribute": "data-focus-id",
+    "sectionSelector": "[data-focus-section]",
+    "sectionIdAttribute": "data-focus-section",
+    "scopeAttribute": "data-focus-scope"
+  },
+  "keyboard": {
+    "sectionPattern": "keyboard"
+  },
+  "guards": [
+    {
+      "name": "welcome",
+      "selector": "[data-focus-id=welcome-continue]",
+      "storageKey": "demoWelcomeSeen",
+      "hint": "welcome|continue"
+    },
+    {
+      "name": "promo",
+      "selector": "[data-promo]",
+      "hint": "promo|watch now|not now",
+      "dismissKeys": ["Right", "Ok"]
+    }
+  ],
+  "startSelector": "[data-focus-section=featuredRail] [data-focus-id]",
+  "busySelector": "[data-splash]",
+  "network": {
+    "bodies": true,
+    "maxBodyBytes": 65536,
+    "redactKeys": "^(password|passwd|pass|pin|secret|token|access_?token|refresh_?token|id_?token|api_?key|authorization|session_?id|cookie|partnerId)$"
+  }
+}

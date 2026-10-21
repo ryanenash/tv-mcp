@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "tv": {
+      "command": "node",
+      "args": ["/absolute/path/to/tv-mcp/packages/server/dist/server.js"],
+      "env": {
+        "TVMCP_PACK": "/absolute/path/to/tv-mcp/examples",
+        "TVMCP_RELAY_URL": "http://localhost:8080",
+        "TVMCP_TOKEN": ""
+      },
+      "timeout": 3600000
+    }
+  }
+}

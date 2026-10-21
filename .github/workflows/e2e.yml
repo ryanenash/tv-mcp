@@ -22,6 +22,8 @@ jobs:
       - run: pnpm type-check
       # Ubuntu 24.04's AppArmor blocks Chrome's user-namespace sandbox ("No usable sandbox!").
       - run: sudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0
+      # A fresh runner's first Chrome launch takes up to ~18 s, enough to blow e2e's 20 s wait for the agent device.
+      - run: time google-chrome --headless=new --no-first-run --dump-dom about:blank > /dev/null
       - run: pnpm e2e
         env:
           CHROME: /usr/bin/google-chrome
